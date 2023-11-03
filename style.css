@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Kablammo&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Shadows+Into+Light&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Irish+Grover&family=Kablammo&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Shadows+Into+Light&display=swap");
+
+/*============================================
+ESCRITORIO (XL REVISAMOS EN 1300px EN ADELANTE 
+==============================================*/
+
+/* ESTILOS GENERALES */
+
+:root {
+  --primary: rgb(242, 178, 46);
+  --success: #ffb84d;
+  --dark: #131313;
+  --light: #eaeaea;
+}
+* {
+  font-family: "Irish Grover", "sans-serif";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* CABECERA */
+
+.header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  z-index: 100;
+}
+
+.header .cont-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header .cont-logo img {
+  height: 80px;
+}
+
+.header .cont-logo p {
+  font-size: 35px;
+  font-family: "shadows Into Light";
+  font-weight: bold;
+  color: var(--light);
+}
+
+.header .navbar a {
+  border: 2px solid var(--primary);
+  padding: 3px 10px;
+  border-radius: 10px;
+  color: var(--primary);
+  margin-right: 10px;
+  transition: 0.5s all;
+}
+
+.header .navbar a:hover {
+  background: var(--primary);
+  color: var(--dark);
+  font-weight: bold;
+}
+
+.navbar-movil {
+  display: none;
+}
+
+/* banner */
+
+.banner {
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(
+    120deg,
+    var(--dark) 60%,
+    var(--success) 40%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner .banner-contec {
+  width: fit-content;
+}
+
+.banner .banner-contec h3 {
+  font-size: 40px;
+  color: var(--light);
+}
+
+.banner .banner-contec h2 {
+  font-size: 90px;
+  color: var(--light);
+}
+
+.banner .banner-contec p {
+  color: #9e9898;
+  font-size: 19px;
+  width: 600px;
+  margin-bottom: 40px;
+}
+
+.banner .banner-contec .btn-home {
+  background: #ff2e02;
+  padding: 10px 30px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: var(--light);
+  border-radius: 6px;
+  font-size: 20px;
+  border: 2px solid #ff2e02;
+  transition: 2s;
+}
+
+.banner .banner-contec .btn-home:hover {
+  background: transparent;
+  color: var(--light);
+}
+
+.banner .banner-img img {
+  max-width: 700px;
+  width: 95%;
+  animation: animation-img-banner 20s linear infinite;
+}
+
+/* ==========================================
+MOVILES (REVISAMOS DE 768px HACIA ABAJO
+============================================*/
+
+@media (max-width: 768px) {
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--dark);
+  }
+
+  .header .navbar {
+    display: none;
+  }
+
+  .navbar-movil {
+    display: block;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background: var(--primary);
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    z-index: 200;
+  }
+
+  .navbar-movil a {
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    padding: 10px;
+    background: var(--dark);
+    border: 2px solid var(--dark);
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+  }
+
+  .navbar-movil a:hover {
+    background: var(--primary);
+    color: var(--dark);
+  }
+
+  .banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 150px;
+    height: 100%;
+  }
+  .banner .banner-contec h3 {
+    font-size: 30px;
+    margin-top: 30px;
+  }
+
+  .banner .banner-contec h2 {
+    font-size: 50px;
+  }
+
+  .banner .banner-contec p {
+    width: auto;
+  }
+  .banner .banner-contec {
+    width: 100%;
+    padding: 20px;
+  }
+  .banner .banner-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 100px;
+  }
+}
+
+@keyframes animation-img-banner {
+  100% {
+    transform: rotate(360deg);
+  }
+}
